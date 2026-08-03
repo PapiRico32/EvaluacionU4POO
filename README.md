@@ -13,7 +13,7 @@ Sistema de gestión de servicios para taller mecánico desarrollado con Python, 
 ### 1. Clonar o descargar el proyecto
 
 ```bash
-cd taller_mecanico
+cd EvaluacionU4POO
 ```
 
 ### 2. Instalar dependencias
