@@ -1,50 +1,98 @@
 import pdb
+import sys
+import os
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'CRUD'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+from servicio import Servicio
 
 
-from CRUD.servicio import Servicio
-
-
-def validar_servicio_debug(servicio: Servicio):
-    """Función con breakpoint para inspeccionar validación"""
+def validar_servicio_debug():
     print("=" * 50)
-    print("INICIANDO DEBUG DE VALIDACIÓN DE SERVICIO")
+    print("DEBUG - Validación de Servicio")
     print("=" * 50)
+    
+    servicio = Servicio(
+        cliente="Ana Celia",
+        vehiculo="Toyota",
+        tipo_servicio="Mantenimiento",
+        costo=100.00
+    )
+    
+    print(f"\nServicio creado: {servicio}")
+    print("\nPresiona Enter para iniciar debugging...")
+    input()
     
     pdb.set_trace()
     
+    print("\n--- Iniciando validaciones ---")
     errores = []
     
-    if not servicio.cliente or len(servicio.cliente.strip()) == 0:
+    if not servicio.cliente or not servicio.cliente.strip():
         errores.append("Cliente vacío")
+        print("❌ Cliente vacío")
+    else:
+        print("✅ Cliente válido")
     
-    if not servicio.vehiculo or len(servicio.vehiculo.strip()) == 0:
+    if not servicio.vehiculo or not servicio.vehiculo.strip():
         errores.append("Vehículo vacío")
+        print("❌ Vehículo vacío")
+    else:
+        print("✅ Vehículo válido")
     
     if servicio.costo <= 0:
         errores.append(f"Costo inválido: {servicio.costo}")
+        print(f"❌ Costo inválido: ${servicio.costo}")
+    else:
+        print(f"✅ Costo válido: ${servicio.costo}")
     
-    print(f"Errores encontrados: {errores}")
+    print(f"\nErrores encontrados: {errores}")
+    print(f"¿Servicio válido? {len(errores) == 0}")
     
     return len(errores) == 0
 
 
-def main():
-    print("Creando servicio de prueba...")
+def debug_servicio_con_error():
+    print("=" * 50)
+    print("DEBUG - Servicio con datos inválidos")
+    print("=" * 50)
     
-  
-    servicio_prueba = Servicio(
-        cliente="Juan Pérez",
-        vehiculo="", 
-        tipo_servicio="Cambio de aceite",
-        costo=-100.00 
+    print("\nCreando servicio con vehículo vacío y costo negativo...")
+    print("El breakpoint se activará ANTES de la validación")
+    print("\nPresiona Enter para continuar...")
+    input()
+    
+    servicio = Servicio(
+        cliente="Test User",
+        vehiculo="",
+        tipo_servicio="Test Service",
+        costo=50.00
     )
     
-    print(f"Servicio creado: {servicio_prueba}")
-
-    es_valido = validar_servicio_debug(servicio_prueba)
+    pdb.set_trace()
     
-    print(f"¿Servicio válido? {es_valido}")
+    print("\n--- Validando servicio ---")
+    
+    if not servicio.cliente:
+        print("❌ Cliente vacío")
+    
+    if not servicio.vehiculo:
+        print("❌ Vehículo vacío")
+    
+    if servicio.costo <= 0:
+        print(f"❌ Costo inválido: {servicio.costo}")
+    else:
+        print(f"✅ Costo válido: ${servicio.costo}")
+    
+    return servicio
 
 
 if __name__ == "__main__":
-    main()
+    print("\n=== Opción 1: Servicio válido ===")
+    validar_servicio_debug()
+    
+    print("\n\n=== Opción 2: Servicio con error ===")
+    debug_servicio_con_error()
+    
+    print("\n✅ Debugging completado")

@@ -1,10 +1,13 @@
+
 import pytest
+import sys
 import os
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'CRUD'))
 
-from CRUD.servicio import Servicio
-from CRUD.repositorio_servicios import RepositorioServicios
-from CRUD.controlador_servicios import ControladorServicios
+from servicio import Servicio
+from repositorio_servicios import RepositorioServicios
+from controlador_servicios import ControladorServicios
 
 
 @pytest.fixture
