@@ -2,13 +2,13 @@
 
 Sistema de gestión de servicios para taller mecánico desarrollado con Python, Tkinter y MySQL.
 
-## 📋 Requisitos
+## Requisitos
 
 - Python 3.8+
 - MySQL 8.0+
 - pip (gestor de paquetes de Python)
 
-## 🚀 Instalación
+## Instalación
 
 ### 1. Clonar o descargar el proyecto
 
@@ -33,7 +33,7 @@ mysql -u root -p < CRUD/db_taller.sql
 
 3. Ingresa tu contraseña de MySQL cuando se solicite
 
-## ▶️ Ejecución
+## Ejecución
 
 Desde la carpeta `CRUD`:
 
@@ -42,23 +42,15 @@ cd CRUD
 python main.py
 ```
 
-## 📁 Estructura del proyecto
-taller_mecanico/
-├── CRUD/ # Código principal
-├── tests/ # Pruebas unitarias
-├── exceptions/ # Excepciones personalizadas
-├── debugging/ # Ejemplos de debugging
-└── README.md
 
-
-## 🧪 Ejecutar pruebas
+## Ejecutar pruebas
 
 ```bash
 cd tests
 pytest -v
 ```
 
-## 📚 Características
+## Características
 
 - ✅ CRUD completo (Crear, Leer, Actualizar, Eliminar)
 - ✅ Interfaz gráfica con Tkinter
@@ -67,7 +59,7 @@ pytest -v
 - ✅ Pruebas unitarias con pytest
 - ✅ Principios SOLID y POO
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **Lenguaje**: Python 3.8+
 - **GUI**: Tkinter
@@ -75,7 +67,7 @@ pytest -v
 - **Pruebas**: pytest
 - **Conector BD**: mysql-connector-python
 
-## 📝 Autor
+## Autor
 
 Desarrollado como proyecto educativo aplicando:
 - Programación Orientada a Objetos (POO)
