@@ -43,3 +43,43 @@ python main.py
 ```
 
 ## 📁 Estructura del proyecto
+taller_mecanico/
+├── CRUD/ # Código principal
+├── tests/ # Pruebas unitarias
+├── exceptions/ # Excepciones personalizadas
+├── debugging/ # Ejemplos de debugging
+└── README.md
+
+
+## 🧪 Ejecutar pruebas
+
+```bash
+cd tests
+pytest -v
+```
+
+## 📚 Características
+
+- ✅ CRUD completo (Crear, Leer, Actualizar, Eliminar)
+- ✅ Interfaz gráfica con Tkinter
+- ✅ Validaciones de datos
+- ✅ Excepciones personalizadas
+- ✅ Pruebas unitarias con pytest
+- ✅ Principios SOLID y POO
+
+## 🛠️ Tecnologías
+
+- **Lenguaje**: Python 3.8+
+- **GUI**: Tkinter
+- **Base de datos**: MySQL
+- **Pruebas**: pytest
+- **Conector BD**: mysql-connector-python
+
+## 📝 Autor
+
+Desarrollado como proyecto educativo aplicando:
+- Programación Orientada a Objetos (POO)
+- Principios SOLID
+- Pruebas unitarias (patrón AAA, principios F.I.R.S.T.)
+- Manejo de excepciones
+- Debugging con pdb
